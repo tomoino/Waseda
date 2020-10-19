@@ -1,6 +1,6 @@
 <template>
     <div style="margin-bottom: 50px;">
-        <h5 class="headline">リプレッサー濃度u, vの変化速度</h5>
+        <h5 class="headline">Rate of change in repressor concentrations u, v</h5>
         <p v-html="$md.render('$\\frac{du}{dt} = \\frac{\\alpha_1}{1+v^{\\beta}} - u + I_1$')"></p>
         <p v-html="$md.render('$\\frac{dv}{dt} = \\frac{\\alpha_2}{1+u^{\\gamma}} - v + I_2$')"></p>
     </div>

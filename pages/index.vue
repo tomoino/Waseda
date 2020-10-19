@@ -5,9 +5,7 @@
         Toggle Switch Simulator
       </h1>
       <div>
-        <img src="~/assets/fig1.png" width="100%"/>
-        <br>
-        <img src="~/assets/fig2.png" width="100%"/>
+        <img src="~/assets/fig.png" width="100%"/>
       </div> 
       <Equation style="font-size: 4vh;"/>
       <vs-row>
@@ -17,8 +15,8 @@
         <vs-col vs-type="flex" vs-justify="center" vs-align="flex-start" vs-lg="6" vs-sm="6" vs-xs="12">
           <Graph :values="secondGraphData" style="width:94%;">
             <vs-switch v-model="nullclineDisplay" style="margin: auto;">
-              <span slot="on">ヌルクライン表示</span>
-              <span slot="off">ヌルクライン非表示</span>
+              <span slot="on">Hide nullclines</span>
+              <span slot="off">Show nullclines</span>
             </vs-switch>
           </Graph>
         </vs-col> 
@@ -41,7 +39,7 @@
               <Schale :value="stableU/3"/>
             </vs-col>
             <vs-col style="margin-top: 30px;" vs-type="flex" vs-justify="center" vs-align="center" vs-lg="12" vs-sm="12" vs-xs="12">
-              <p>※転写因子濃度uに依存してGFPが発現</p>
+              <p>*GFP was expressed depending on the concentration of repressor u</p>
             </vs-col>
           </vs-row>
         </vs-col> 
@@ -138,7 +136,7 @@ export default {
               {
                 scaleLabel: {
                   display: true, 
-                  labelString: "時間 t"
+                  labelString: "Time t"
                 },
                 ticks: {
                   beginAtZero: true,
@@ -152,7 +150,7 @@ export default {
               {   
                 scaleLabel: {
                   display: true, 
-                  labelString: "転写因子濃度 u, v"
+                  labelString: "Repressor concentrations u, v"
                 },
                 ticks: {
                   beginAtZero: true,
@@ -164,7 +162,7 @@ export default {
           title: {
               display: true,
               position: "bottom",
-              text: '転写因子濃度の時間変化'
+              text: 'Changes in repressor concentrations over time'
           },
           legend: {
             labels: {
@@ -237,7 +235,7 @@ export default {
             data: V_of_nullV
           },
           {
-            label: '初期濃度',
+            label: 'Initial concentration',
             pointBackgroundColor: 'rgba(255, 150, 50,  0.8)',
             borderColor: 'rgba(255, 150, 50,  0.8)',
             fill: false,
@@ -245,7 +243,7 @@ export default {
             data: init
           },
           {
-            label: '最終濃度',
+            label: 'Final concentration',
             pointBackgroundColor: 'rgba(100, 255, 100, 0.8)',
             borderColor: 'rgba(100, 255, 100, 0.8)',
             fill: false,
@@ -259,7 +257,7 @@ export default {
               {
                 scaleLabel: {
                   display: true, 
-                  labelString: "転写因子濃度 u"
+                  labelString: "Repressor concentration u"
                 },
                 ticks: {
                   beginAtZero: true,
@@ -273,7 +271,7 @@ export default {
               {   
                 scaleLabel: {
                   display: true, 
-                  labelString: "転写因子濃度 v"
+                  labelString: "Repressor concentration v"
                 },
                 ticks: {
                   beginAtZero: true,
@@ -286,7 +284,7 @@ export default {
           title: {
               display: true,
               position: "bottom",
-              text: '転写因子濃度のヌルクライン'
+              text: 'Nullclines of repressor concentrations'
           },
           legend: {
             labels: {
@@ -298,7 +296,7 @@ export default {
       
       if (!this.nullclineDisplay) {
         graphData.y.splice(0,2) // ヌルクラインのデータを削除
-        graphData.options.title.text = '初期濃度と最終濃度'
+        graphData.options.title.text = 'Initial and final concentration of repressors'
       }
       return graphData
     }
