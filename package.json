@@ -8,7 +8,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=master --cleanup"
   },
   "dependencies": {
     "@nuxtjs/markdownit": "^1.2.9",
@@ -20,6 +21,7 @@
     "vuesax": "^3.11.15"
   },
   "devDependencies": {
+    "push-dir": "^0.4.1",
     "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.11"
   }
