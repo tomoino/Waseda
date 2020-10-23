@@ -1,5 +1,5 @@
 # toggle-switch-simulator
-https://toggle-switch-simulator.netlify.app/
+https://tomoino.github.io/education-tool/
 
 ## Build Setup
 
